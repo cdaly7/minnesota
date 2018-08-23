@@ -73,7 +73,7 @@ const buildAxes = (g, x0, y, height) => {
 		.attr("fill", "#000")
 		.attr("font-weight", "bold")
 		.attr("text-anchor", "start")
-		.text("Batting Avg.");
+		.attr("font-color", "FFF");
 };
 
 /**
@@ -111,6 +111,7 @@ const buildLegend = (g, z, width, keys) => {
  */
 const build = (data, dataKey) => {
 	let keys = data[0].values.map((split) => split.Player);
+
 	let svg = d3.select("#compare-container svg");
 	let width = +svg.attr("width") - SVG_MARGIN.left - SVG_MARGIN.right;
 	let	height = +svg.attr("height") - SVG_MARGIN.top - SVG_MARGIN.bottom;

@@ -6,8 +6,8 @@ const SVG_MARGIN = {
 	left: 50
 };
 
-const SVG_OVERALL_WIDTH = 800;
-const SVG_OVERALL_HEIGHT = 500;
+const SVG_OVERALL_WIDTH = 300;
+const SVG_OVERALL_HEIGHT = 225;
 const SVG_WIDTH = SVG_OVERALL_WIDTH - SVG_MARGIN.left - SVG_MARGIN.right;
 const SVG_HEIGHT = SVG_OVERALL_HEIGHT - SVG_MARGIN.top - SVG_MARGIN.bottom;
 
@@ -82,11 +82,12 @@ const buildLinesCircles = (g, x, y, data, dataKey) => {
 
 /**
  * @param {Array} data
+ * @param {String} playerId
  * @param {Array} players
  * @param {Array} splits
  * @param {String} dataKey
  */
-const build = (data, players, splits, dataKey) => {
+const build = (data, playerId, players, splits, dataKey) => {
 	let y = d3.scaleLinear().range([SVG_HEIGHT, 0]);
 	let x = d3.scalePoint()
 		.domain(splits)
@@ -94,15 +95,15 @@ const build = (data, players, splits, dataKey) => {
 
 	// Setting max and min values for y Axis
 	y.domain([
-		d3.min(data, (c) => d3.min(c.values, (d) => d[dataKey])),
+		0,
 		d3.max(data, (c) => d3.max(c.values, (d) => d[dataKey]))
 	]);
 
 	// Removing old graph
-	d3.select("#trend-container .graph svg").remove();
+	d3.select(`#${playerId} .trends-container svg`).remove();
 
 	// Adding new svg to page
-	let svg = d3.select("#trend-container .graph")
+	let svg = d3.select(`#${playerId} .trends-container`)
 		.append("svg:svg")
 		.attr("width", SVG_OVERALL_WIDTH)
 		.attr("height", SVG_OVERALL_HEIGHT);

@@ -2,36 +2,93 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	<link rel="stylesheet" href="./assets/styles/minnesota.css">
 </head>
 <body>
-<div>
-	<h2>Minnesota Twins 2017 In Review</h2>
-	<h4>
-		<p>
-			The Minnesota Twins are an American professional baseball team based in Minneapolis, Minnesota. The Twins compete in Major League Baseball as a member club of the American League Central division. The team is named after the Twin Cities area comprising Minneapolis and St. Paul. The 2017 Minnesota Twins season was the 57th season for the franchise in the Twin Cities of Minnesota, their 8th season at Target Field, and their 117th overall in the American League. The Twins began the season on April 3rd at home against the Kansas City Royals and finished the year on October 1st at home against the Detroit Tigers.
-		</p>
-	</h4>
-</div>
-
-<div id="compare-container">
+<section id="about">
 	<div>
-		<label>Monthly Batting Avg. Compare</label>
+		<h1 class="align-center">Minnesota Twins</h1>
+		<ul class="fact-list">
+			<li>
+				<div class="fact-icon">
+					<i class="fas fa-baseball-ball"></i>
+				</div>
+				<h3 class="fact">
+					The Minnesota Twins are an American professional baseball team based in Minneapolis, Minnesota.
+				</h3>
+			</li>
+			<li>
+				<div class="fact-icon">
+					<i class="fas fa-building"></i>
+					<i class="fas fa-building"></i>
+				</div>
+				<h3 class="fact">
+					The team is named after the Twin Cities area comprising Minneapolis and St. Paul.
+				</h3>
+			</li>
+			<li>
+				<div class="fact-icon">
+					<i class="fas fa-divide"></i>
+				</div>
+				<h3 class="fact">
+					The Twins compete in Major League Baseball as a member club of the American League Central division.
+				</h3>
+			</li>
+		</ul>
 	</div>
-	<div class="graph">
-		<svg width="960" height="500"></svg>
-	</div>
-</div>
-
-<div id="trend-container">
+</section>
+<section id="season" class="ss-style-triangles">
 	<div>
-		<label>Select a player for Batting Avg. Trends</label>
+		<h2 class="align-center">2017 Season Trivia</h2>
+		<h5 class="align-center">The Twins began the season on April 3rd at home against the Kansas City Royals and finished the year on October 1st at home against the Detroit Tigers.</h5>
+		<ul class="fact-list">
+			<li>
+				<div class="fact-icon">
+					<i class="fas">57</i>
+				</div>
+				<h3 class="fact">
+					The 2017 Minnesota Twins season was the 57th season for the franchise in the Twin Cities of Minnesota
+				</h3>
+			</li>
+			<li>
+				<div class="fact-icon">
+					<i class="fas">8</i>
+				</div>
+				<h3 class="fact">
+					Their 8th season at Target Field
+				</h3>
+			</li>
+			<li>
+				<div class="fact-icon">
+					<i class="fas">117</i>
+				</div>
+				<h3 class="fact">
+					Their 117th overall in the American League
+				</h3>
+			</li>
+		</ul>
 	</div>
-	<div class="selection">
+</section>
+<section id="compare-container" class="ss-style-triangles">
+	<div>
+		<h2 class="align-center">Top Batting Averages 2017</h2>
+		<div class="graph">
+			<svg width="960" height="500"></svg>
+		</div>
 	</div>
-	<div class="graph">
+</section>
+<section id="trend-container">
+	<div>
+		<h2 class="align-center">Batting Avg. Trends 2017</h2>
+		<div class="selection">
+		</div>
+		<div class="slider closed">
+			<div class="graph">
+			</div>
+		</div>
 	</div>
-</div>
+</section>
 
 <!-- Dependencies -->
 <script src="http://d3js.org/d3.v4.min.js"></script>
@@ -39,7 +96,7 @@
 <!-- main controller -->
 <script type="module" src="./compare.js"></script>
 <script type="module" src="./trend.js"></script>
-<script type="module" src="./minnesota.js"></script>
+<script type="module" src="./main.js"></script>
 
 </body>
 </html>
