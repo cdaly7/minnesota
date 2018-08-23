@@ -1,9 +1,18 @@
+body {
+	background: #D3D3D3;
+	color: #FFFFFF;
+}
+
 .axis--x path {
 	display: none;
 }
 
 .axis .domain {
 	display: none;
+}
+
+.axis text {
+	color:#FFFFFF;
 }
 
 .line {
@@ -26,13 +35,123 @@
 }
 
 .player {
-	display: inline-block;
-	width: 150px;
-	cursor: pointer;
-	border: 3px solid white;
-	margin: 5px;
+	padding: 20px 0px;
 }
 
-.player.selected {
+.player img {
+	cursor: pointer;
+	border: 3px solid white;
+	float: left;
+}
+
+.player.selected img {
 	border-color: navy;
+}
+
+.fas {
+	font-size: 72px
+}
+
+.fact-list {
+	max-width: 2000px;
+	margin: 0 auto;
+	color: #fff;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	text-align: center;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+ul {
+	list-style: none;
+}
+
+.about-list li {
+	width: 33.3%;
+	margin-bottom: 100px;
+}
+
+.fact {
+	color: #fff;
+	max-width: 208px;
+	margin: 0 auto;
+	font-size: 19px;
+	line-height: 25px;
+	margin-top: 30px;
+	text-transform: none;
+	letter-spacing: 0;
+	font-weight: 300;
+}
+
+section {
+	position: relative;
+	padding: 2.5em;
+	background: #4F628E;
+	color: #fff;
+}
+
+section::before, section::after {
+	position: absolute;
+	content: '';
+	pointer-events: none;
+}
+
+section:nth-child(odd) {
+	background: #061539;
+}
+
+.ss-style-triangles::before,
+.ss-style-triangles::after {
+	left: 50%;
+	width: 66px;
+	height: 66px;
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.ss-style-triangles::before {
+	top: -33px;
+	background: #4F628E;
+}
+
+.ss-style-triangles::after {
+	bottom: -33px;
+	z-index: 10;
+	background: inherit;
+}
+
+.selection {
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+}
+
+.selected .trends-container {
+	max-width: 500px;
+}
+
+.trends-container {
+	overflow-y: hidden;
+	max-width: 0;
+
+	transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	display: inline-block;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.graph {
+	background: white;
 }
